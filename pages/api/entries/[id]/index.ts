@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { db } from '../../../database';
-import { Entry, IEntry } from '../../../models';
+import { db } from '../../../../database';
+import { Entry, IEntry } from '../../../../models';
 
 type Data =
   | {
@@ -14,11 +14,11 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const { id } = req.query;
+  // const { id } = req.query;
 
-  if (!mongoose.isValidObjectId(id)) {
-    return res.status(400).json({ message: 'El id no es valido ' + id });
-  }
+  // if (!mongoose.isValidObjectId(id)) {
+  //   return res.status(400).json({ message: 'El id no es valido ' + id });
+  // }
 
   switch (req.method) {
     case 'PUT':
